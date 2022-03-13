@@ -19,7 +19,7 @@ public class ContractRestController {
     }
 
     @GetMapping
-    public List<Contract> getContractList() {
-        return contractService.getAllContracts();
+    public List<Contract> getContractsList() {
+        return contractService.getAllContractsWithCheckBox();
     }
 }

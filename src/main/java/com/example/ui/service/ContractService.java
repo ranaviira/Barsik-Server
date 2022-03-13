@@ -9,20 +9,29 @@ import java.util.List;
 
 @Service
 public class ContractService {
-
     private final ContractRepository contractRepository;
-
     public ContractService(ContractRepository contractRepository) {
         this.contractRepository = contractRepository;
     }
+    private List<Contract> contractsList;
+    private void getContractsFromDataBase() {
+        contractsList = contractRepository.findAll();
+    }
 
-    public List<Contract> getAllContracts() {
-        List<Contract> contractList = contractRepository.findAll();
-        for (Contract list : contractList) {
-            LocalDate localDateUpdate = list.getUpdate();
+    /**
+     * Метод начначает поля с checkBox,
+     * True если дата последнего обновления договора меньше текущей даты на 60 дней
+     */
+    private void setAllCheckBox() {
+        for (Contract list : contractsList) {
+            LocalDate localDateUpdate = list.getUpdateDate();
             LocalDate localDateNow = LocalDate.now().minusDays(60);
             list.setCheckBox(localDateUpdate.isAfter(localDateNow));
         }
-        return contractList;
+    }
+    public List<Contract> getAllContractsWithCheckBox() {
+        getContractsFromDataBase();
+        setAllCheckBox();
+        return contractsList;
     }
 }

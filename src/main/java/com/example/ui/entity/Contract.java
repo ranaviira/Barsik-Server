@@ -15,18 +15,17 @@ import java.time.LocalDate;
 public class Contract {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
-    @Column(name = "start")
-    private LocalDate start;
+    @Column(name = "start_date")
+    private LocalDate startDate;
 
-    @Column(name = "number")
-    private String number;
+    @Column(name = "contract_number")
+    private String contractNumber;
 
-    @Column(name = "update")
-    private LocalDate update;
+    @Column(name = "update_date")
+    private LocalDate updateDate;
 
     @Column(name = "check_box")
     private Boolean checkBox;
