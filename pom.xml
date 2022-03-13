@@ -123,7 +123,7 @@
                 <version>2.2.1.RELEASE</version>
                 <configuration>
                     <fork>true</fork>
-                    <mainClass>com.example.ui.SpringBootBarsikServerApplication</mainClass>
+                    <mainClass>com.example.server.SpringBootBarsikServerApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

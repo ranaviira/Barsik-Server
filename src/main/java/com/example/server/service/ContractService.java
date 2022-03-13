@@ -1,7 +1,7 @@
-package com.example.ui.service;
+package com.example.server.service;
 
-import com.example.ui.entity.Contract;
-import com.example.ui.repository.ContractRepository;
+import com.example.server.entity.Contract;
+import com.example.server.repository.ContractRepository;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
